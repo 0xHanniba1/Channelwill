@@ -99,6 +99,12 @@ class BasePage:
         ActionChains(self.driver).move_to_element(element).perform()
         logger.info(f"Hovered over element: 「{locator}」")
 
+    def move_to_element(self, locator):
+        """移动鼠标到元素"""
+        element = self.find_element(locator)
+        ActionChains(self.driver).move_to_element(element).perform()
+        logger.info(f"Moved mouse to element: 「{locator}」")
+
     def select_dropdown_by_text(self, locator, text):
         """通过文本选择下拉选项"""
         element = self.find_element(locator)
